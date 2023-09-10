@@ -10,6 +10,7 @@ const nuevodiv = `
     style="width: 200px; height: 200px; border: 1px solid black;">
   </div>
 `;
+var color;
 
 const cambiandoColor = function (elemento) {
   elemento.style.backgroundColor = "black";
@@ -31,7 +32,11 @@ div4.addEventListener("click", () => {
   cambiandoColor(div4);
 });
 
-var color;
+function creandoDiv(element) {
+  element.innerHTML = nuevodiv;
+  let nuevokey = document.getElementById("nuevokey");
+  return nuevokey;
+}
 
 document.addEventListener("keydown", function (event) {
   if (event.key.toLocaleLowerCase() === "a") {
@@ -45,18 +50,15 @@ document.addEventListener("keydown", function (event) {
     key.style.backgroundColor = color;
   } else if (event.key.toLocaleLowerCase() === "q") {
     color = "purple";
-    key2.innerHTML = nuevodiv;
-    let nuevokey = document.getElementById("nuevokey");
+    creandoDiv(key2);
     nuevokey.style.backgroundColor = color;
   } else if (event.key.toLocaleLowerCase() === "w") {
     color = "gray";
-    key2.innerHTML = nuevodiv;
-    let nuevokey = document.getElementById("nuevokey");
+    creandoDiv(key2);
     nuevokey.style.backgroundColor = color;
   } else if (event.key.toLocaleLowerCase() === "e") {
     color = "brown";
-    key2.innerHTML = nuevodiv;
-    let nuevokey = document.getElementById("nuevokey");
+    creandoDiv(key2);
     nuevokey.style.backgroundColor = color;
   }
 });
